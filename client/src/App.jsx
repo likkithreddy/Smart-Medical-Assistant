@@ -10,6 +10,10 @@ import Profile from './pages/Profile'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import NotFound from './pages/NotFound'
+import SymptomChecker from './pages/SymptomChecker'
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 // Import shared components
 import Navbar from './components/Navbar'
@@ -19,22 +23,28 @@ const App = () => {
   return (
     <Router>
       <div className="min-h-screen flex flex-col bg-gray-100 text-gray-900">
-        <Navbar />
+        <div className='fixed top-0 z-50 w-full'>
+          <Navbar />
+        </div>
 
-        <main className="mt-16 flex-grow">
+        <main className=" flex-grow mt-14">
           <Routes>
+            
             <Route path="/" element={<Home />} />
+            <Route path="/symptom" element={<SymptomChecker />} />
             <Route path="/consultation" element={<Consultation />} />
             <Route path="/history" element={<History />} />
             <Route path="/nearby" element={<Nearby />} />
             <Route path="/profile" element={<Profile />} />
+
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <ToastContainer />
         </main>
 
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   )
