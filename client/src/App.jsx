@@ -22,12 +22,12 @@ import Footer from './components/Footer'
 const App = () => {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-gray-100 text-gray-900">
+      <div className="min-h-screen flex flex-col bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
         <div className='fixed top-0 z-50 w-full'>
           <Navbar />
         </div>
 
-        <main className=" flex-grow mt-14">
+        <main className=" flex-grow mt-14 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
           <Routes>
             
             <Route path="/" element={<Home />} />
@@ -43,8 +43,8 @@ const App = () => {
           </Routes>
           <ToastContainer />
         </main>
+         <Footer /> 
 
-        {/* <Footer /> */}
       </div>
     </Router>
   )
